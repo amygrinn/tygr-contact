@@ -1,7 +1,7 @@
 const path = require('path');
 
-const PACKAGE_NAME = 'tygr-header';
-const LIBRARY_NAME = 'Tygrheader';
+const PACKAGE_NAME = 'tygr-contact';
+const LIBRARY_NAME = 'TygrContact';
 
 module.exports = {
   entry: {
@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'lib'),
     libraryTarget: 'window',
-    libraryExport: 'default',
+    // libraryExport: 'default',
     library: LIBRARY_NAME,
   },
   module: {

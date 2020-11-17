@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
-    <title>TyGr Header browser demo</title>
+    <title>TyGr Contact browser demo</title>
     <meta name="description" content="Login component for TyGr" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -10,8 +10,8 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script browser src="lib/tygr-header.min.js"></script>
-    <link browser rel="stylesheet" href="lib/tygr-header.min.css" />
+    <script browser src="lib/tygr-contact.min.js"></script>
+    <link browser rel="stylesheet" href="lib/tygr-contact.min.css" />
     <style>
       html,
       body {
@@ -32,9 +32,10 @@
         align-items: center;
         background-color: white;
         padding: 8px;
+        flex-direction: column;
       }
 
-      #header {
+      #contact {
         position: fixed;
         left: 0;
         top: 0;
@@ -43,7 +44,7 @@
         justify-content: center;
       }
 
-      #header a {
+      #contact a {
         margin: 8px;
         padding: 8px;
         color: grey;
@@ -58,7 +59,7 @@
     </style>
   </head>
   <body>
-    <div id="header">
+    <div id="contact">
       <a href="node.html">Node</a>
       <a href="browser.html">Browser</a>
       <a href="standalone.html">Standalone</a>
@@ -67,15 +68,32 @@
     <script>
       window.addEventListener('load', () => {
         document
-          .getElementById('header')
+          .getElementById('contact')
           .setAttribute('env', location.pathname.match(/\/([^\/]*.).html$/)[1]);
       });
     </script>
 
-    <div id="app"></div>
+    <div id="app">
+      <div id="github"></div>
+      <div id="twitter"></div>
+      <div id="email"></div>
+    </div>
 
     <script browser type="text/babel">
-      ReactDOM.render(<TygrHeader />, document.getElementById('app'));
+      const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      };
+
+      ReactDOM.render(
+        <div style={containerStyle}>
+          <TygrContact.Github />
+          <TygrContact.Twitter />
+          <TygrContact.Email />
+        </div>,
+        document.getElementById('app')
+      );
     </script>
   </body>
 </html>

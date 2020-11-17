@@ -1,6 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from '..';
-import '../lib/tygr-header.min.css';
+import { Email, Github, Twitter } from '..';
+import '../lib/tygr-contact.min.css';
 
-ReactDOM.render(<Header />, document.getElementById('app'));
+const containerStyle = {
+  display: 'flex',
+  flexDirection: 'column' as const,
+  alignItems: 'center',
+};
+
+ReactDOM.render(
+  <div style={containerStyle}>
+    <Github />
+    <Twitter />
+    <Email />
+  </div>,
+  document.getElementById('app')
+);

@@ -1,7 +1,7 @@
 {
-  "name": "@tygr/header",
-  "version": "2.0.2",
-  "description": "Header for tygr",
+  "name": "@tygr/contact",
+  "version": "0.0.0",
+  "description": "Contact for tygr",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -52,10 +52,10 @@
     "singleQuote": true
   },
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf lib dist",
     "ts": "tsc",
     "ts:w": "npm run ts -- -w",
-    "sass": "sass -I node_modules --style=compressed --no-source-map sass/index.scss lib/tygr-header.min.css",
+    "sass": "sass -I node_modules --style=compressed --no-source-map sass/index.scss lib/tygr-contact.min.css",
     "sass:w": "npm run sass -- --watch",
     "webpack": "webpack",
     "webpack:w": "npm run webpack -- -w",
@@ -79,11 +79,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tylergrinn/tygr-header"
+    "url": "https://github.com/tylergrinn/tygr-contact"
   },
   "keywords": [
     "react",
-    "header",
+    "contact",
     "github",
     "twitter",
     "widget"
@@ -93,9 +93,7 @@
   "peerDependencies": {
     "react": "17"
   },
-  "dependencies": {
-    "@tygr/logo": "2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-runtime": "^7.12.1",

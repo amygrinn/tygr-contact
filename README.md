@@ -1,6 +1,6 @@
-# Tygr Header
+# Tygr Contact
 
-[Demo](https://tylergrinn.github.io/tygr-header)
+[Demo](https://tylergrinn.github.io/tygr-contact)
 
 [Forking Guide](https://github.com/tylergrinn/tygr-logo/blob/main/docs/forking.md)
 
@@ -17,23 +17,25 @@ This is a react component packaged for three environments: node, browser, and st
 Installation:
 
 ```cmd
-npm i --save @tygr/header
+npm i --save @tygr/contact
 ```
 
 Usage (jsx):
 
 ```jsx
-import Header from '@tygr/header';
+import * as Contact from '@tygr/contact';
 
 // Import styles. Make sure there is a style loader specified in your
 // webpack config
-import '@tygr/header/lib/tygr-header.min.css';
+import '@tygr/contact/lib/tygr-contact.min.css';
 
 export default function MyComponent() {
   return (
     <div>
-      <h1>Header usage example</h1>
-      <Header />
+      <h1>Contact usage example</h1>
+      <Contact.Github />
+      <Contact.Twitter />
+      <Contact.Email />
     </div>
   );
 }
@@ -43,7 +45,7 @@ export default function MyComponent() {
 
 Usage:
 
-When included via script tag, the component is exposed as a window library named 'TygrHeader'
+When included via script tag, the component is exposed as a window library named 'TygrContact'
 
 ```html
 <html>
@@ -52,17 +54,17 @@ When included via script tag, the component is exposed as a window library named
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script src="https://tylergrinn.github.io/tygr-header/lib/tygr-header.min.js"></script>
+    <script src="https://tylergrinn.github.io/tygr-contact/lib/tygr-contact.min.js"></script>
     <link
       rel="stylesheet"
-      href="https://tylergrinn.github.io/tygr-header/lib/tygr-header.min.css"
+      href="https://tylergrinn.github.io/tygr-contact/lib/tygr-contact.min.css"
     />
   </head>
   <body>
     <div id="app"></div>
 
     <script type="text/babel">
-      ReactDOM.render(<TygrHeader />, document.getElementById('app'));
+      ReactDOM.render(<TygrContact.Github />, document.getElementById('app'));
     </script>
   </body>
 </html>
@@ -73,7 +75,7 @@ When included via script tag, the component is exposed as a window library named
 Installation:
 
 ```cmd
-npm i --save @tygr/header
+npm i --save @tygr/contact
 ```
 
 Usage:
@@ -81,42 +83,42 @@ Usage:
 ```jsx
 
 // Vanilla JS
-import Header from '@tygr/header/lib/standalone';
+import * as Contact from '@tygr/contact/lib/standalone';
 
-const el = document.getElementById('tygr-header');
+const el = document.getElementById('tygr-contact');
 
-Header.mount(el);
+Contact.Twitter.mount(el);
 
 // Vue
 <template>
 <div>
-  <div ref="tygr-header"></div>
+  <div ref="tygr-contact"></div>
 </div>
 </template>
 
 <script>
-import Header from '@tygr/header/lib/standalone';
+import * as Contact from '@tygr/contact/lib/standalone';
 
 export default {
   mounted() {
-    Header.mount(this.$refs['tygr-header']);
+    Contact.Github.mount(this.$refs['tygr-contact']);
   },
 };
 </script>
 
 // Angular Typescript
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import Header from '@tygr/header/lib/standalone';
+import * as Contact from '@tygr/contact/lib/standalone';
 
 @Component({
   selector: 'app-root',
-  template: '<div><div #tygr-header></div></div>',
+  template: '<div><div #tygr-contact></div></div>',
 })
-export class HeaderComponent  {
-  @ViewChild('tygr-header') el: ElementRef;
+export class ContactComponent  {
+  @ViewChild('tygr-contact') el: ElementRef;
 
   ngAfterViewInit() {
-    Header.mount(this.el.nativeElement);
+    Contact.Email.mount(this.el.nativeElement);
   }
 }
 ```
@@ -133,5 +135,5 @@ Make sure to reassign any sass variables before importing the `main.scss` file:
 $accent-1: white;
 $accent-2: yellow;
 
-@import '@tygr/header/sass';
+@import '@tygr/contact/sass';
 ```

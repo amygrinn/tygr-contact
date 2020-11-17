@@ -1,4 +1,6 @@
-import Header from '../lib/standalone';
-import '../lib/tygr-header.min.css';
+import { Email, Github, Twitter } from '../lib/standalone';
+import '../lib/tygr-contact.min.css';
 
-Header.mount(document.getElementById('app'));
+Github.mount(document.getElementById('github'));
+Twitter.mount(document.getElementById('twitter'));
+Email.mount(document.getElementById('email'));
