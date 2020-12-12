@@ -3,7 +3,7 @@ import React from 'react';
 export function Github() {
   return (
     <a
-      href="https://twitter.com/tjgrinn?ref_src=twsrc%5Etfw"
+      href="https://github.com/tylergrinn"
       className="tygr-contact github"
       aria-label="Follow @tjgrinn on Twitter"
       target="_blank"
@@ -23,8 +23,8 @@ export function Github() {
 export function Twitter() {
   return (
     <a
+      href="https://twitter.com/tjgrinn?ref_src=twsrc%5Etfw"
       className="tygr-contact twitter"
-      href="https://github.com/tylergrinn"
       aria-label="Follow @tylergrinn on GitHub"
       target="_blank"
     >
